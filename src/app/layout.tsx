@@ -39,7 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NoteProvider>
-            <SidebarProvider>
+            <SidebarProvider defaultOpen={false}>
               <AppSidebar />
               <div className="flex min-h-screen w-full flex-col">
                 <Header />

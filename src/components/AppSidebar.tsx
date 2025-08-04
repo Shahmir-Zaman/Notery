@@ -27,16 +27,18 @@ async function AppSidebar() {
     <Sidebar>
       <SidebarContent className="custom-scrollbar">
         <SidebarGroup>
-          <SidebarGroupLabel className="bitcount mt-2 mb-2 text-3xl font-bold">
+          <SidebarGroupLabel className="bitcount mt-4 text-center text-lg font-semibold">
             {user ? (
               'Your Notes'
             ) : (
-              <p>
-                <Link href="/login" className="underline">
-                  Login
-                </Link>{' '}
-                to see your notes
-              </p>
+              <div className="flex h-full flex-col items-center justify-center">
+                <p>
+                  <Link href="/login" className="underline">
+                    Login
+                  </Link>{' '}
+                  to see your notes
+                </p>
+              </div>
             )}
           </SidebarGroupLabel>
           {user && <SidebarGroupContent notes={all_notes} />}
