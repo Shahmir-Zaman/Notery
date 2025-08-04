@@ -14,7 +14,8 @@ import { Fragment, useRef, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { Textarea } from './ui/textarea';
 import { ArrowUpIcon } from 'lucide-react';
-import { askAIAboutNoteAction } from '@/actions/notes';
+import { askAIAboutNotesAction } from '@/actions/notes';
+import '@/styles/ai-response.css';
 
 type Props = {
   user: User;
@@ -66,7 +67,7 @@ function AskAIButton({ user }: Props) {
     setTimeout(scrollToBottom, 100);
 
     startTransition(async () => {
-      const response = await askAIAboutNoteAction(newQuestions, responses);
+      const response = await askAIAboutNotesAction(newQuestions, responses);
       setResponses((prev) => [...prev, response]);
 
       setTimeout(scrollToBottom, 100);
