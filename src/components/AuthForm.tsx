@@ -35,7 +35,17 @@ function AuthForm({ type }: Props) {
         }
 
         if (result?.errorMessage) {
-          toast.error(result.errorMessage);
+          if (
+            result.errorMessage.includes(
+              'A user with this email already exists'
+            )
+          ) {
+            toast.error('This email is already registered.', {
+              description: 'Please log in instead.',
+            });
+          } else {
+            toast.error(result.errorMessage);
+          }
         } else {
           const successMessage = isLoginForm
             ? 'Logged in successfully!'
