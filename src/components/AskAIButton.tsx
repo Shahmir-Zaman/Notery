@@ -122,7 +122,7 @@ function AskAIButton({ user }: Props) {
                 {responses[index] && (
                   <div className="flex justify-start">
                     <div
-                      className="bg-muted max-w-[70%] rounded-lg px-3 py-2 text-sm"
+                      className="bot-response bg-muted max-w-[70%] rounded-lg px-3 py-2 text-sm"
                       dangerouslySetInnerHTML={{ __html: responses[index] }}
                     />
                   </div>
@@ -155,7 +155,11 @@ function AskAIButton({ user }: Props) {
               value={questionText}
               onChange={(e) => setQuestionText(e.target.value)}
             />
-            <Button size="sm" className="h-8 w-8 shrink-0 rounded-full p-0">
+            <Button
+              size="sm"
+              className="h-8 w-8 shrink-0 rounded-full p-0"
+              onClick={handleSubmit}
+            >
               <ArrowUpIcon className="h-4 w-4" />
             </Button>
           </div>

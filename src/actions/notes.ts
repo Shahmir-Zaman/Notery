@@ -3,7 +3,7 @@
 import { getUser } from '@/auth/server';
 import { prisma } from '@/db/prisma';
 import { handleError } from '@/lib/utils';
-import openai from '@openai';
+import openai from '@/openai';
 import { ChatCompletionMessageParam } from 'openai/resources/index.mjs';
 
 export const createNoteAction = async (noteId: string) => {
@@ -112,7 +112,7 @@ export const askAIAboutNotesAction = async (
   }
 
   const completion = await openai.chat.completions.create({
-    model: 'openrouter/horizon-beta',
+    model: 'z-ai/glm-4.5-air:free',
     messages,
   });
 
