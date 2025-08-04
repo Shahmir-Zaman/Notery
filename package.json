@@ -13,6 +13,7 @@
     "schema": "src/db/schema.prisma"
   },
   "dependencies": {
+    "@openai/openai": "npm:@jsr/openai__openai@^5.11.0",
     "@prisma/client": "^6.13.0",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-collapsible": "^1.1.11",
