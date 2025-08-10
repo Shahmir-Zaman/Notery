@@ -271,9 +271,11 @@ If you have a suggestion that would make this better, please fork the repo and c
 ---
 ## ⭐ License
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+This project is dual-licensed.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+For open-source and personal projects, Notery is licensed under the **AGPLv3**. You can view the full license text in the [LICENSE](LICENSE) file.
+
+For commercial use in proprietary applications, a separate commercial license is required. Please contact [zshahmir5@gmail.com] for more information on obtaining a commercial license.
 
 ---
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
