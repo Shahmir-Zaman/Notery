@@ -44,49 +44,67 @@ async function Header() {
           </>
         ) : (
           <>
-            <Collapsible>
-              <div className="hidden gap-2 sm:flex">
-                <Button
-                  asChild
-                  size="sm"
-                  className="h-9 px-4 text-sm font-medium"
-                >
-                  <Link href="/sign-up">Sign Up</Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="h-9 px-4 text-sm font-medium"
-                >
-                  <Link href="/login">Login</Link>
-                </Button>
-              </div>
-              <CollapsibleTrigger asChild className="sm:hidden">
-                <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
-                  ☰
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="bg-popover absolute top-full right-0 z-50 mt-1 rounded-md border p-2 shadow-lg sm:hidden">
-                <div className="flex min-w-[140px] flex-col gap-1">
-                  <Button
-                    asChild
-                    size="sm"
-                    className="h-8 w-full justify-start text-sm"
-                  >
-                    <Link href="/sign-up">Sign Up</Link>
+            {/* Desktop view - show buttons inline */}
+            <div className="hidden gap-2 sm:flex">
+              <Button
+                asChild
+                size="sm"
+                className="h-9 px-4 text-sm font-medium"
+              >
+                <Link href="/sign-up">Sign Up</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="h-9 px-4 text-sm font-medium"
+              >
+                <Link href="/login">Login</Link>
+              </Button>
+            </div>
+
+            {/* Mobile view - dropdown menu */}
+            <div className="relative sm:hidden">
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
+                    <svg
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
                   </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="h-8 w-full justify-start text-sm"
-                  >
-                    <Link href="/login">Login</Link>
-                  </Button>
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="bg-popover absolute top-full right-0 z-50 mt-2 w-40 rounded-md border p-2 shadow-lg">
+                  <div className="flex flex-col gap-1">
+                    <Button
+                      asChild
+                      size="sm"
+                      className="h-8 w-full justify-start text-sm"
+                    >
+                      <Link href="/sign-up">Sign Up</Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="h-8 w-full justify-start text-sm"
+                    >
+                      <Link href="/login">Login</Link>
+                    </Button>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
             <DarkModeToggle />
           </>
         )}

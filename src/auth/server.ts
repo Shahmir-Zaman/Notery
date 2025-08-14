@@ -32,7 +32,10 @@ export async function getUser() {
   const userObject = await auth.getUser();
 
   if (userObject.error) {
-    console.error(userObject.error);
+    // Only log unexpected errors, not missing session errors
+    if (userObject.error.message !== 'Auth session missing!') {
+      console.error('Auth error:', userObject.error);
+    }
     return null;
   }
 
