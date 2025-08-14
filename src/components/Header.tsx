@@ -39,11 +39,15 @@ async function Header() {
       <div className="ml-auto flex items-center gap-2">
         {user ? (
           <>
-            <LogOutButton />
-            <DarkModeToggle />
+            {/* When logged in - show logout and theme toggle responsively */}
+            <div className="flex items-center gap-2">
+              <LogOutButton />
+              <DarkModeToggle />
+            </div>
           </>
         ) : (
           <>
+            {/* When NOT logged in - show sign up/login options */}
             {/* Desktop view - show buttons inline */}
             <div className="hidden gap-2 sm:flex">
               <Button
@@ -63,7 +67,7 @@ async function Header() {
               </Button>
             </div>
 
-            {/* Mobile view - dropdown menu */}
+            {/* Mobile view - dropdown menu (only when NOT logged in) */}
             <div className="relative sm:hidden">
               <Collapsible>
                 <CollapsibleTrigger asChild>
