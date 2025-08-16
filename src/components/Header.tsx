@@ -39,11 +39,42 @@ async function Header() {
       <div className="ml-auto flex items-center gap-2">
         {user ? (
           <>
-            {/* When logged in - show logout and theme toggle responsively */}
-            <div className="flex items-center gap-2">
+            {/* When logged in - show user menu */}
+            {/* Desktop view - show logout button inline */}
+            <div className="hidden gap-2 sm:flex">
               <LogOutButton />
               <DarkModeToggle />
             </div>
+
+            {/* Mobile view - user dropdown menu */}
+            <div className="relative sm:hidden">
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
+                    <svg
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="bg-popover absolute top-full right-0 z-50 mt-2 w-40 rounded-md border p-2 shadow-lg">
+                  <div className="flex flex-col gap-1">
+                    <LogOutButton className="h-8 w-full justify-center text-sm" />
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
+            <DarkModeToggle />
           </>
         ) : (
           <>

@@ -7,7 +7,11 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-function LogOutButton() {
+interface LogOutButtonProps {
+  className?: string;
+}
+
+function LogOutButton({ className = 'w-24' }: LogOutButtonProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const handleLogOut = async () => {
@@ -28,7 +32,7 @@ function LogOutButton() {
     <Button
       variant="outline"
       onClick={handleLogOut}
-      className="w-24"
+      className={className}
       disabled={loading}
     >
       {loading ? <Loader2 className="animate-spin" /> : 'Log Out'}
