@@ -31,11 +31,22 @@ function SelectNoteButton({ note }: Props) {
     }
   }, [selectedNoteText, shouldUseGlobalNoteText]);
 
-  const blankNoteText = 'EMPTY NOTE';
-  let noteText = localNoteText || blankNoteText;
+  // Helper function to extract the first line as title
+  const getFirstLineAsTitle = (text: string): string => {
+    if (!text || text.trim() === '') {
+      return 'EMPTY NOTE';
+    }
+
+    const firstLine = text.split('\n')[0].trim();
+    return firstLine || 'EMPTY NOTE';
+  };
+
+  let noteText = localNoteText || '';
   if (shouldUseGlobalNoteText) {
-    noteText = selectedNoteText || blankNoteText;
+    noteText = selectedNoteText || '';
   }
+
+  const noteTitle = getFirstLineAsTitle(noteText);
 
   return (
     <SidebarMenuButton
@@ -44,7 +55,7 @@ function SelectNoteButton({ note }: Props) {
     >
       <Link href={`/?noteId=${note.id}`} className="flex h-fit flex-col">
         <p className="w-full truncate overflow-hidden text-ellipsis whitespace-nowrap">
-          {noteText}
+          {noteTitle}
         </p>
         <p className="text-muted-foreground text-xs">
           {note.updatedAt.toLocaleDateString()}

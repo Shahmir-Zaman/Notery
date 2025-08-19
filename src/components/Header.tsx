@@ -47,7 +47,7 @@ async function Header() {
             </div>
 
             {/* Mobile view - user dropdown menu */}
-            <div className="relative sm:hidden">
+            <div className="flex gap-2 sm:hidden">
               <Collapsible>
                 <CollapsibleTrigger asChild>
                   <Button variant="ghost" size="sm" className="h-9 w-9 p-0">
@@ -72,9 +72,8 @@ async function Header() {
                   </div>
                 </CollapsibleContent>
               </Collapsible>
+              <DarkModeToggle />
             </div>
-
-            <DarkModeToggle />
           </>
         ) : (
           <>

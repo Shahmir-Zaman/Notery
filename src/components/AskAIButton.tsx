@@ -115,14 +115,14 @@ function AskAIButton({ user }: Props) {
             {questions.map((question, index) => (
               <Fragment key={index}>
                 <div className="flex justify-end">
-                  <div className="bg-primary text-primary-foreground max-w-[70%] rounded-lg px-3 py-2 text-sm">
+                  <div className="bg-primary text-primary-foreground max-w-[70%] rounded-lg px-3 py-2 font-sans text-sm font-medium">
                     {question}
                   </div>
                 </div>
                 {responses[index] && (
                   <div className="flex justify-start">
                     <div
-                      className="bot-response bg-muted max-w-[70%] rounded-lg px-3 py-2 text-sm"
+                      className="bot-response bg-muted max-w-[70%] rounded-lg px-3 py-2 font-sans text-sm font-normal"
                       dangerouslySetInnerHTML={{ __html: responses[index] }}
                     />
                   </div>
