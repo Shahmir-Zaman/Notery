@@ -115,14 +115,14 @@ function AskAIButton({ user }: Props) {
             {questions.map((question, index) => (
               <Fragment key={index}>
                 <div className="flex justify-end">
-                  <div className="bg-primary text-primary-foreground max-w-[70%] rounded-lg px-3 py-2 font-sans text-sm font-medium">
+                  <div className="bg-primary text-primary-foreground roboto max-w-[70%] rounded-lg px-3 py-2 text-sm font-medium">
                     {question}
                   </div>
                 </div>
                 {responses[index] && (
                   <div className="flex justify-start">
                     <div
-                      className="bot-response bg-muted max-w-[70%] rounded-lg px-3 py-2 font-sans text-sm font-normal"
+                      className="bot-response bg-muted roboto max-w-[70%] rounded-lg px-3 py-2 text-sm font-normal"
                       dangerouslySetInnerHTML={{ __html: responses[index] }}
                     />
                   </div>
@@ -148,7 +148,7 @@ function AskAIButton({ user }: Props) {
             <Textarea
               ref={textareaRef}
               placeholder="Ask me anything about your notes..."
-              className="placeholder:text-muted-foreground min-h-0 flex-1 resize-none border-none bg-transparent p-0 text-sm shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="placeholder:text-muted-foreground roboto min-h-0 flex-1 resize-none border-none bg-transparent p-0 text-sm shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
               rows={1}
               onInput={handleInput}
               onKeyDown={handleKeyDown}

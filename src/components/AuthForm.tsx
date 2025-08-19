@@ -67,6 +67,7 @@ function AuthForm({ type }: Props) {
           <Input
             id="email"
             name="email"
+            className="roboto"
             placeholder="Enter your email"
             type="email"
             required
@@ -78,6 +79,7 @@ function AuthForm({ type }: Props) {
           <Input
             id="password"
             name="password"
+            className="roboto"
             placeholder="Enter your password"
             type="password"
             required
